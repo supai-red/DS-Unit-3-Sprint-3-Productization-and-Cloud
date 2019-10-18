@@ -7,9 +7,9 @@
   <body>
     <p>Here is the list of tuples: </p>
     <ul>
- {% for item in options %}
-   <li>item['merge'] </li>
-   {% endfor %}
+        {% block content %}
+    <p>The list is: {{ city }}</p>
+          {% endblock %}
  </ul>
 
   </body>

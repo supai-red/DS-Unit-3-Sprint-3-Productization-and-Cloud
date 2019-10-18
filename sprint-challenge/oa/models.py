@@ -1,7 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import requests
 
-DB = SQLAgit lchemy()
+DB = SQLAlchemy()
 
 class Record(DB.Model):
     id = DB.Column(DB.Integer, primary_key=True)

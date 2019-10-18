@@ -10,7 +10,7 @@ def create_app():
     app = Flask(__name__)
 
     # Pointing to the location database will populate.
-    app.config['SQLALCHEMY_DATABASE_URI'] = ""sqlite:///C:\\Users\\Andrea\\Desktop\\MyRepo\\C:\Users\Andrea\Desktop\MyRepo\DS-Unit-3-Sprint-3-Productization-and-ClouC:\Users\Andrea\Desktop\MyRepo\DS-Unit-3-Sprint-3-Productization-and-Cloud\\sprint-challenge\\db.sqlite3""
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite3"
 
     DB.init_app(app)
 
