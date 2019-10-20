@@ -9,6 +9,7 @@ import requests
 """Setting an instance of the Flask App"""
 APP = Flask(__name__)
 APP.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db.sqlite3"
+APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DB = SQLAlchemy(APP)
 API = openaq.OpenAQ()
     # Pointing to the location database will populate.
@@ -16,7 +17,6 @@ API = openaq.OpenAQ()
 @APP.route('/')
 def root():
     """Base view."""
-
     return str(Record.query.filter(Record.value >=10).all)
 
 @APP.route('/refresh')
@@ -40,3 +40,6 @@ class Record(DB.Model):
 
     def __repr__(self):
         return '<Record: {} >'.format(self.datetime, self.value)
+
+if __name__ == '__main__':
+    root()
